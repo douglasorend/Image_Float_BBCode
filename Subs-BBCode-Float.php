@@ -112,39 +112,28 @@ function BBCode_Float_Button(&$buttons)
 	);
 }
 
-function BBCode_Float_Fix_Param_Order(&$message)
+function BBCode_Float_Params(&$message, $pos, &$parameters)
 {
-	global $context;
-
-	BBCode_Float_parameters($dummy, $parameters);
-	foreach (array('imgleft', 'imgright') as $tag)
+	$match = substr($message, $pos - 1);
+	$match = substr($match, 0, strpos($match, ']'));
+	$params = explode(' ', $match);
+	unset($params[0]);
+	$order = array();
+	$replace_str = $old = '';
+	foreach ($params as $param)
 	{
-		$pattern = '#\[' . $tag . ' (.+?)\]#i' . ($context['utf8'] ? 'u' : '');
-		preg_match_all($pattern, $message, $matches);
-		$matches = array_unique($matches[0]);
-		asort($matches);
-		foreach ($matches as $match)
-		{
-			$params = explode(' ', str_replace(']', ' ]', $match));
-			unset($params[0]);
-			unset($params[count($params)]);
-			$order = array();
-			$replace_str = $old = '';
-			foreach ($params as $param)
-			{
-				if (strpos($param, '=') === false)
-					$order[$old] .= ' ' . $param;
-				else
-					$order[$old = substr($param, 0, strpos($param, '='))] = substr($param, strpos($param, '=') + 1);
-			}
-			foreach ($parameters as $key => $ignore)
-			{
-				$replace_str .= (isset($order[$key]) ? ' ' . $key . '=' . $order[$key] : '');
-				unset($order[$key]);
-			}
-			$message = str_replace($match, '[' . $tag . $replace_str . ']', $message);
-		}
+		if (strpos($param, '=') === false)
+			$order[$old] .= ' ' . $param;
+		else
+			$order[$old = substr($param, 0, strpos($param, '='))] = substr($param, strpos($param, '=') + 1);
 	}
+	foreach ($parameters as $key => $ignore)
+	{
+		$replace_str .= (isset($order[$key]) ? ' ' . $key . '=' . $order[$key] : '');
+		unset($order[$key]);
+	}
+	$message = str_replace($match, $replace_str, $message);
+	return count($order) == 0;
 }
 
 ?>

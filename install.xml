@@ -2,20 +2,13 @@
 <!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
 <modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
 <id>Dougiefresh:ImgLeftRight</id>
-<version>1.16</version>
+<version>1.17</version>
 
 <file name="$sourcedir/Subs.php">
-	<operation>
-		<search position="after"><![CDATA[// Shall we take the time to cache this?]]></search>
-		<add><![CDATA[// Setup for Image Floating Left/Right
-	BBCode_Float_Fix_Param_Order($message);
-	
-	]]></add>
-	</operation>
-	<operation>
+	<operation error="ignore">
 		<search position="after"><![CDATA[$orders = permute($preg);]]></search>
 		<add><![CDATA[if (in_array($possible['tag'], array('imgleft', 'imgright')))
-					$orders = array($preg);
+					$orders = array(BBCode_Float_Params($message, $pos1, $possible['parameters']) ? $preg : array());
 				else
 					]]></add>
 	</operation>
