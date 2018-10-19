@@ -12,7 +12,7 @@
 if (!defined('SMF')) 
 	die('Hacking attempt...');
 
-function BBCode_Float(&$bbc)
+function BBCode_Float_parameters(&$params1, &$params2)
 {
 	// Define the parameters:
 	$params1 = array(
@@ -26,12 +26,16 @@ function BBCode_Float(&$bbc)
 		'margin-bottom' => array('optional' => true, 'value' => ' margin-bottom: $1px;', 'match' => '(\d+)'),
 	);
 	$params2 = array_merge($params1, array(
-		'border-style' => array('value' => ' border-style: $1;', 'match' => '(dotted|dashed|solid|double|groove|ridge|inset|outset)'),
+		'border-style' => array('value' => ' border-style: $1;', 'match' => '(dotted|dashed|solid|double|groove|ridge|inset|outset)', 'validate' => 'ILA_Param_Border_Style'),
 		'border-width' => array('optional' => true, 'value' => ' border-width: $1px;', 'match' => '(\d+)'),
 		'border-color' => array('optional' => true, 'value' => ' border-color: $1;', 'match' => '(#[\da-fA-F]{3}|#[\da-fA-F]{6}|[A-Za-z]{1,20}|rgb\(\d{1,3}, ?\d{1,3}, ?\d{1,3}\))'),
 	));
+}
 
+function BBCode_Float(&$bbc)
+{
 	// Define the BBCodes:
+	BBCode_Float_parameters($params1, $params2);
 	$bbc[] = array(
 		'tag' => 'imgleft',
 		'type' => 'unparsed_content',
@@ -106,6 +110,44 @@ function BBCode_Float_Button(&$buttons)
 		'before' => '[imgright]',
 		'after' => '[/imgright]',
 	);
+}
+
+function BBCode_Float_Fix_Param_Order(&$message)
+{
+	global $context;
+
+	BBCode_Float_parameters($dummy, $float_params);
+	foreach (array('imgleft', 'imgright') as $tag)
+	{
+		$pattern = '#\[' . $tag . ' (.+?)\]#i' . ($context['utf8'] ? 'u' : '');
+		preg_match_all($pattern, $message, $matches);
+		$matches = array_unique($matches[0]);
+		asort($matches);
+		foreach ($matches as $match)
+		{
+			$params = explode('|', str_replace(' ', '|', str_replace(']', ' ]', $match)));
+			unset($params[0]);
+			unset($params[count($params)]);
+			$order = array();
+			$old = '';
+			foreach ($params as $id => $param)
+			{
+				if (strpos($param, '=') === false && !empty($old))
+				{
+					$order[$old] .= ' ' . $param;
+					continue;
+				}
+				$key = explode('=', $param);
+				if (!isset($order[$key[0]]))
+					$order[$key[0]] = $key[1];
+				$old = $key[0];
+			}
+			$out = '[' . $tag;
+			foreach ($float_params as $key => $ignore)
+				$out .= (isset($order[$key]) ? ' ' . $key . '=' . $order[$key] : '');
+			$message = str_replace($match, $out . ']', $message);
+		}
+	}
 }
 
 ?>
