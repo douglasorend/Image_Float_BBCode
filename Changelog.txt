@@ -1,3 +1,6 @@
+v1.18 - September 4th, 2015
+o Added Greek UTF8 language modification file to the mod, courtsey of villasg.  Thanks, villasg!
+
 v.17 - September 4th, 2015
 o Rewrote the "fix parameter order" function to be called only when necessary.
 o Operation that calls "fix parameter order" function now skipped for nightly SMF 2.1 Beta 2.
