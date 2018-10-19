@@ -1,3 +1,7 @@
+v1.21 - October 18th, 2018
+o No functionality change.
+o Updated documentation to point to new website.
+
 v1.20 - August 31st, 2017
 o Fixed undefined array element issue in [b]Subs-BBCode-Float.php[/b].
 
