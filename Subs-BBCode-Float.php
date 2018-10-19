@@ -13,6 +13,10 @@ function BBCode_Float(&$bbc)
 	$bbc[] = array(
 		'tag' => 'imgleft',
 		'type' => 'unparsed_content',
+		'parameters' => array(
+			'width' => array('optional' => true, 'value' => ' width="$1"', 'match' => '(\d+)'),
+			'height' => array('optional' => true, 'value' => ' height="$1"', 'match' => '(\d+)'),
+		),
 		'content' => '<img src="$1" style="float:left; margin:15px;" {width}{height} />',
 		'validate' => create_function('&$tag, &$data, $disabled', '
 			$data = strtr($data, array(\'<br />\' => \'\'));
@@ -24,10 +28,6 @@ function BBCode_Float(&$bbc)
 	$bbc[] = array(
 		'tag' => 'imgleft',
 		'type' => 'unparsed_content',
-		'parameters' => array(
-			'width' => array('optional' => true, 'value' => ' width="$1"', 'match' => '(\d+)'),
-			'height' => array('optional' => true, 'value' => ' height="$1"', 'match' => '(\d+)'),
-		),
 		'content' => '<img src="$1" style="float:left; margin:15px;" />',
 		'validate' => create_function('&$tag, &$data, $disabled', '
 			$data = strtr($data, array(\'<br />\' => \'\'));
@@ -39,6 +39,10 @@ function BBCode_Float(&$bbc)
 	$bbc[] = array(
 		'tag' => 'imgright',
 		'type' => 'unparsed_content',
+		'parameters' => array(
+			'width' => array('optional' => true, 'value' => ' width="$1"', 'match' => '(\d+)'),
+			'height' => array('optional' => true, 'value' => ' height="$1"', 'match' => '(\d+)'),
+		),
 		'content' => '<img src="$1" style="float:right; margin:15px;" {width}{height} />',
 		'validate' => create_function('&$tag, &$data, $disabled', '
 			$data = strtr($data, array(\'<br />\' => \'\'));
@@ -50,10 +54,6 @@ function BBCode_Float(&$bbc)
 	$bbc[] = array(
 		'tag' => 'imgright',
 		'type' => 'unparsed_content',
-		'parameters' => array(
-			'width' => array('optional' => true, 'value' => ' width="$1"', 'match' => '(\d+)'),
-			'height' => array('optional' => true, 'value' => ' height="$1"', 'match' => '(\d+)'),
-		),
 		'content' => '<img src="$1" style="float:right; margin:15px;" />',
 		'validate' => create_function('&$tag, &$data, $disabled', '
 			$data = strtr($data, array(\'<br />\' => \'\'));

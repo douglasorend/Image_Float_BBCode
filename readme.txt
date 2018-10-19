@@ -1,5 +1,5 @@
 [hr]
-[center][color=red][size=16pt][b]IMAGE FLOATING TO LEFT OR RIGHT BBCODE v1.0[/b][/size][/color]
+[center][color=red][size=16pt][b]IMAGE FLOATING TO LEFT OR RIGHT BBCODE v1.1[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=3983]Link to Mod[/url]
 [/center]
 [hr]
@@ -7,12 +7,14 @@
 [color=blue][b][size=12pt][u]Introduction[/u][/size][/b][/color]
 This modification adds two BBCodes to allow a user to float an image to the left or right of the text.
 
-The two BBCodes take the form of:
+The two BBCodes takes these forms:
 [code]
+[imgleft]{url}[/imgleft]
+[imgright]{url}[/imgright]
 [imgleft width=x height=x]{url}[/imgleft]
 [imgright width=x height=x]{url}[/imgright]
 [/code]
-where {url} is the image URL and the width and height parameters being optional.
+where [b]{url}[/b] is the image URL and the [b]width[/b] and [b]height[/b] parameters being optional.
 
 [color=blue][b][size=12pt][u]Admin Settings[/u][/size][/b][/color]
 There are no admin settings to this mod.  To disable, you must uninstall this mod.
@@ -22,7 +24,10 @@ This mod was tested on SMF 2.0.9, but should work on SMF 2.0 and up.
 
 [color=blue][b][size=12pt][u]Changelog[/u][/size][/b][/color]
 [quote]
-v1.0 - November 22th, 2014
+[b][u]v1.1 - December 5th, 2014[/u][/b]
+o Fixed bbcode code so that requested width and height are honored...
+
+[b][u]v1.0 - November 22th, 2014[/u][/b]
 o Initial Release of the mod
 [/quote]
 
