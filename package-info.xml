@@ -5,17 +5,17 @@
 	<id>Dougiefresh:ImgLeftRight</id>
 	<name>Image Floating to Left or Right BBCode</name>
 	<type>modification</type>
-	<version>1.8</version>
+	<version>1.9</version>
 
-	<install for="2.0 - 2.0.99">
+	<install for="2.0 - 2.0.99, 2.1 Beta 1 - 2.1.99">
 		<readme parsebbc="true">readme.txt</readme>
 		<code>add_remove_hooks.php</code>
 		<modification>language.xml</modification>
 		<require-file name="Subs-BBCode-Float.php" destination="$sourcedir" />
-		<require-file name="imgleft.gif" destination="$themedir/images/bbc" />
-		<require-file name="imgright.gif" destination="$themedir/images/bbc" />
+		<require-file name="imgleft.gif" destination="$imagesdir/bbc" />
+		<require-file name="imgright.gif" destination="imagesdir/bbc" />
 	</install>
-	<uninstall for="2.0 - 2.0.99">
+	<uninstall for="2.0 - 2.0.99, 2.1 Beta 1 - 2.1.99">
 		<code>add_remove_hooks.php</code>
 		<modification reverse="true">language.xml</modification>
 		<remove-file name="$sourcedir/Subs-BBCode-Float.php" />		

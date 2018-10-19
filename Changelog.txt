@@ -1,0 +1,30 @@
+v1.9 - April 4th, 2015
+o Updated for SMF 2.1 Beta 1
+o Fixed image upload location within package-info.xml
+
+v1.8 - February 22nd, 2015
+o Fixed bug report by Alanar regarding missing validation functions.
+
+v1.7 - January 16th, 2015
+o License change to Simplified BSD.  No functionality change.
+
+v1.6 - December 30th, 2014
+o Added alt parameter to the imgleft and imgright bbcodes.
+
+v1.5 - December 29th, 2014
+o Fixed image install locations within package-info.xml.
+
+v1.4 - December 17th, 2014
+o Rewrote mod to use one validation function for all bbcodes in this mod.
+
+v1.3 - December 10th, 2014
+o Added button for the bbcode.
+
+v1.2 - December 6th, 2014
+o Added code to disable creation of the validation code if BBCode is disabled.
+
+v1.1 - December 5th, 2014
+o Fixed bbcode code so that requested width and height are honored...
+
+v1.0 - November 22th, 2014
+o Initial Release of the mod
