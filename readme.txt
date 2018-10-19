@@ -1,5 +1,5 @@
 [hr]
-[center][color=red][size=16pt][b]IMAGE FLOATING TO LEFT OR RIGHT BBCODE v1.12[/b][/size][/color]
+[center][color=red][size=16pt][b]IMAGE FLOATING TO LEFT OR RIGHT BBCODE v1.13[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=3983]Link to Mod[/url]
 [/center]
 [hr]
@@ -8,24 +8,26 @@
 This modification adds two BBCodes to allow a user to float an image to the left or right of the text.
 
 The two BBCodes takes these forms:
-[code]
+[quote]
 [imgleft]{url}[/imgleft]
 [imgright]{url}[/imgright]
 [imgleft {params}]{url}[/imgleft]
 [imgright {params}]{url}[/imgright]
-[/code]
+[/quote]
 where [b]{url}[/b] is the image URL and the optional acceptable parameters are:
-[code]
-alt={alternate text goes here}
-width=x
-height=x
-margin=x
-margin-left=x
-margin-right=x
-margin-top=x
-margin-bottom=x
-[/code]
-Where [b]x[/b] is a number of pixels.
+[quote]
+[b]alt[/b] - Alternate text if the event that the image can't be displayed.
+[b]width[/b] - Width of the image.  Expressed in pixels.
+[b]height[/b] - Height of the image.  Expressed in pixels.
+[b]margin[/b] - Margin around the image.  Expressed in pixels.
+[b]margin-left[/b] - The image's left margin.  Expressed in pixels.
+[b]margin-right[/b] - The image's right margin.  Expressed in pixels.
+[b]margin-top[/b] - The image's top margin.  Expressed in pixels.
+[b]margin-bottom[/b] - The image's bottom margin.  Expressed in pixels.
+[b]border-style[/b] - Border style.  Valid answers: [b]dotted[/b], [b]dashed[/b], [b]solid[/b], [b]double[/b], [b]groove[/b], [b]ridge[/b], [b]inset[/b], [b]outset[/b]
+[b]border-width[/b] - Border width.  Expressed in pixels.
+[b]border-color[/b] - Border color.  Expressed either as [b]#xxx[/b], [b]#xxxxxx[/b], [b]rbg(x,x,x)[/b], or [b]{text}[/b]
+[/quote]
 
 [color=blue][b][size=12pt][u]Admin Settings[/u][/size][/b][/color]
 This BBCode may be disabled by going into the [b]Admin[/b] => [b]Forum[/b] => [b]Posts and Topics[/b] => [b]Bulletin Board Code[/b] and unchecking the bbcodes you don't want to use.  You may also be uninstall this mod in order to disable it.
