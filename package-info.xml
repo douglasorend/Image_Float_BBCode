@@ -5,13 +5,14 @@
 	<id>Dougiefresh:ImgLeftRight</id>
 	<name>Image Floating to Left or Right BBCode</name>
 	<type>modification</type>
-	<version>1.18</version>
+	<version>1.19</version>
 
 	<install for="2.0 - 2.0.99">
 		<readme parsebbc="true">readme.txt</readme>
 		<code>add_remove_hooks.php</code>
 		<modification>install.xml</modification>
 		<modification>language_english.xml</modification>
+		<modification>language_greek-utf8.xml</modification>
 		<require-file name="Subs-BBCode-Float.php" destination="$sourcedir" />
 		<require-file name="imgleft.gif" destination="$imagesdir/bbc" />
 		<require-file name="imgright.gif" destination="$imagesdir/bbc" />
@@ -20,6 +21,7 @@
 		<code>add_remove_hooks.php</code>
 		<modification reverse="true">install.xml</modification>
 		<modification reverse="true">language_english.xml</modification>
+		<modification reverse="true">language_greek-utf8.xml</modification>
 		<remove-file name="$sourcedir/Subs-BBCode-Float.php" />		
 		<remove-file name="$themedir/images/bbc/imgleft.gif" />		
 		<remove-file name="$themedir/images/bbc/imgright.gif" />		
@@ -30,6 +32,7 @@
 		<code>add_remove_hooks.php</code>
 		<modification>install.xml</modification>
 		<modification>language_english.xml</modification>
+		<modification>language_greek-utf8.xml</modification>
 		<require-file name="Subs-BBCode-Float.php" destination="$sourcedir" />
 		<require-file name="imgleft.png" destination="$imagesdir/bbc" />
 		<require-file name="imgright.png" destination="$imagesdir/bbc" />
@@ -38,6 +41,7 @@
 		<code>add_remove_hooks.php</code>
 		<modification reverse="true">install.xml</modification>
 		<modification reverse="true">language_english.xml</modification>
+		<modification reverse="true">language_greek-utf8.xml</modification>
 		<remove-file name="$sourcedir/Subs-BBCode-Float.php" />		
 		<remove-file name="$themedir/images/bbc/imgleft.png" />		
 		<remove-file name="$themedir/images/bbc/imgright.png" />		

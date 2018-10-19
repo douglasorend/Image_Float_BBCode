@@ -1,3 +1,6 @@
+v1.19 - September 6th, 2015
+o Added Greek UTF8 file to the [b]package-info.xml[/b] so that it actually installs!
+
 v1.18 - September 4th, 2015
 o Added Greek UTF8 language modification file to the mod, courtsey of villasg.  Thanks, villasg!
 
