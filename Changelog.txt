@@ -1,3 +1,6 @@
+v1.12 - July 12th, 2015
+o Added "margin", "margin-left", "margin-right", "margin-top" and "margin-bottom" parameters.
+
 v1.11 - May 2nd, 2015
 o Fixed package-info.xml so that image is placed in correct folder.
 

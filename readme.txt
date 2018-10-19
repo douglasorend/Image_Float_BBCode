@@ -1,5 +1,5 @@
 [hr]
-[center][color=red][size=16pt][b]IMAGE FLOATING TO LEFT OR RIGHT BBCODE v1.11[/b][/size][/color]
+[center][color=red][size=16pt][b]IMAGE FLOATING TO LEFT OR RIGHT BBCODE v1.12[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=3983]Link to Mod[/url]
 [/center]
 [hr]
@@ -11,18 +11,27 @@ The two BBCodes takes these forms:
 [code]
 [imgleft]{url}[/imgleft]
 [imgright]{url}[/imgright]
-[imgleft width=x height=x]{url}[/imgleft]
-[imgright width=x height=x]{url}[/imgright]
-[imgleft width=x height=x alt="Some Text Here"]{url}[/imgleft]
-[imgright width=x height=x alt="Some Text Here"]{url}[/imgright]
+[imgleft {params}]{url}[/imgleft]
+[imgright {params}]{url}[/imgright]
 [/code]
-where [b]{url}[/b] is the image URL and the [b]width[/b] and [b]height[/b] parameters being optional.
+where [b]{url}[/b] is the image URL and the optional acceptable parameters are:
+[code]
+alt={alternate text goes here}
+width=x
+height=x
+margin=x
+margin-left=x
+margin-right=x
+margin-top=x
+margin-bottom=x
+[/code]
+Where [b]x[/b] is a number of pixels.
 
 [color=blue][b][size=12pt][u]Admin Settings[/u][/size][/b][/color]
 This BBCode may be disabled by going into the [b]Admin[/b] => [b]Forum[/b] => [b]Posts and Topics[/b] => [b]Bulletin Board Code[/b] and unchecking the bbcodes you don't want to use.  You may also be uninstall this mod in order to disable it.
 
 [color=blue][b][size=12pt][u]Compatibility Notes[/u][/size][/b][/color]
-This mod was tested on SMF 2.0.9, but should work on SMF 2.1 Beta 1, as well as SMF 2.0 and up.  SMF 1.x is not and will not be supported.
+This mod was tested on SMF 2.0.10, but should work on SMF 2.1 Beta 1, as well as SMF 2.0 and up.  SMF 1.x is not and will not be supported.
 
 [color=blue][b][size=12pt][u]Changelog[/u][/size][/b][/color]
 The changelog has been removed and can be seen at [url=http://www.xptsp.com/board/index.php?topic=2.msg127#msg127]XPtsp.com[/url].
