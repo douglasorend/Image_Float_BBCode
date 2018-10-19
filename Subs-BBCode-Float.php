@@ -15,17 +15,17 @@ function BBCode_Float(&$bbc)
 		'type' => 'unparsed_content',
 		'parameters' => array(
 			'alt' => array('optional' => true),
-			'width' => array('optional' => true, 'value' => ' width="$1"', 'match' => '(\d+)'),
-			'height' => array('optional' => true, 'value' => ' height="$1"', 'match' => '(\d+)'),
+			'width' => array('optional' => true, 'match' => '(\d+)', 'validate' => 'FImg_Param_Width'),
+			'height' => array('optional' => true, 'match' => '(\d+)', 'validate' => 'FImg_Param_Height'),
 		),
-		'content' => '<img src="$1" style="float:left; margin:15px;" alt="{alt}"{width}{height} />',
+		'content' => '<img src="$1" style="float:left; margin:15px;" alt="{alt}"{width}{height} class="bbc_img resized" />',
 		'validate' => 'BBCode_Float_Validate',
 		'disabled_content' => '($1)',
 	);
 	$bbc[] = array(
 		'tag' => 'imgleft',
 		'type' => 'unparsed_content',
-		'content' => '<img src="$1" style="float:left; margin:15px;" />',
+		'content' => '<img src="$1" style="float:left; margin:15px;" class="bbc_img resized" />',
 		'validate' => 'BBCode_Float_Validate',
 		'disabled_content' => '($1)',
 	);
@@ -34,17 +34,17 @@ function BBCode_Float(&$bbc)
 		'type' => 'unparsed_content',
 		'parameters' => array(
 			'alt' => array('optional' => true),
-			'width' => array('optional' => true, 'value' => ' width="$1"', 'match' => '(\d+)'),
-			'height' => array('optional' => true, 'value' => ' height="$1"', 'match' => '(\d+)'),
+			'width' => array('optional' => true, 'match' => '(\d+)', 'validate' => 'FImg_Param_Width'),
+			'height' => array('optional' => true, 'match' => '(\d+)', 'validate' => 'FImg_Param_Height'),
 		),
-		'content' => '<img src="$1" style="float:right; margin:15px;" alt="{alt}"{width}{height} />',
+		'content' => '<img src="$1" style="float:right; margin:15px;" alt="{alt}"{width}{height} class="bbc_img resized" />',
 		'validate' => 'BBCode_Float_Validate',
 		'disabled_content' => '($1)',
 	);
 	$bbc[] = array(
 		'tag' => 'imgright',
 		'type' => 'unparsed_content',
-		'content' => '<img src="$1" style="float:right; margin:15px;" />',
+		'content' => '<img src="$1" style="float:right; margin:15px;" class="bbc_img resized" />',
 		'validate' => 'BBCode_Float_Validate',
 		'disabled_content' => '($1)',
 	);
