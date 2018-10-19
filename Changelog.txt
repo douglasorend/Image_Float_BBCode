@@ -1,3 +1,7 @@
+v1.16 - August 8th, 2015
+o Fixed the imgleft and imgright so that the images are floated to left/right of DIV area.
+o Fixed issue with "fix parameter order" function so that it displays expected output.
+
 v1.15 - July 30th, 2015
 o Performance increase due to modification of parse_bbc function to deal with memory issue found.
 

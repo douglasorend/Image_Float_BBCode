@@ -40,7 +40,7 @@ function BBCode_Float(&$bbc)
 		'tag' => 'imgleft',
 		'type' => 'unparsed_content',
 		'parameters' => $params2,
-		'content' => '<img src="$1" style="align:left; margin:15px;{margin}{margin-left}{margin-right}{margin-top}{margin-bottom}{border-style}{border-width}{border-color}" alt="{alt}"{width}{height} class="bbc_img resized" />',
+		'content' => '<div style="float: left; margin: 15px;{margin}{margin-left}{margin-right}{margin-top}{margin-bottom}{border-style}{border-width}{border-color}"><img src="$1" alt="{alt}"{width}{height} class="bbc_img resized" /></div>',
 		'validate' => 'BBCode_Float_Validate',
 		'disabled_content' => '($1)',
 	);
@@ -48,14 +48,14 @@ function BBCode_Float(&$bbc)
 		'tag' => 'imgleft',
 		'type' => 'unparsed_content',
 		'parameters' => $params1,
-		'content' => '<img src="$1" style="align:left; margin:15px;{margin}{margin-left}{margin-right}{margin-top}{margin-bottom}" alt="{alt}"{width}{height} class="bbc_img resized" />',
+		'content' => '<div style="float: left; margin: 15px;{margin}{margin-left}{margin-right}{margin-top}{margin-bottom}"><img src="$1" alt="{alt}"{width}{height} class="bbc_img resized" /></div>',
 		'validate' => 'BBCode_Float_Validate',
 		'disabled_content' => '($1)',
 	);
 	$bbc[] = array(
 		'tag' => 'imgleft',
 		'type' => 'unparsed_content',
-		'content' => '<img src="$1" style="float:left; margin:15px;" class="bbc_img resized" />',
+		'content' => '<div style="float: left; margin: 15px;"><img src="$1" alt="{alt}"{width}{height} class="bbc_img resized" /></div>',
 		'validate' => 'BBCode_Float_Validate',
 		'disabled_content' => '($1)',
 	);
@@ -63,7 +63,7 @@ function BBCode_Float(&$bbc)
 		'tag' => 'imgright',
 		'type' => 'unparsed_content',
 		'parameters' => $params2,
-		'content' => '<img src="$1" style="align:right;{margin}{margin-left}{margin-right}{margin-top}{margin-bottom}{border-style}{border-width}{border-color}" alt="{alt}"{width}{height} class="bbc_img resized" />',
+		'content' => '<div style="float: right; margin: 15px;{margin}{margin-left}{margin-right}{margin-top}{margin-bottom}{border-style}{border-width}{border-color}"><img src="$1" alt="{alt}"{width}{height} class="bbc_img resized" /></div>',
 		'validate' => 'BBCode_Float_Validate',
 		'disabled_content' => '($1)',
 	);
@@ -71,14 +71,14 @@ function BBCode_Float(&$bbc)
 		'tag' => 'imgright',
 		'type' => 'unparsed_content',
 		'parameters' => $params1,
-		'content' => '<img src="$1" style="align:right;{margin}{margin-left}{margin-right}{margin-top}{margin-bottom}" alt="{alt}"{width}{height} class="bbc_img resized" />',
+		'content' => '<div style="float: right; margin: 15px;{margin}{margin-left}{margin-right}{margin-top}{margin-bottom}"><img src="$1" alt="{alt}"{width}{height} class="bbc_img resized" /></div>',
 		'validate' => 'BBCode_Float_Validate',
 		'disabled_content' => '($1)',
 	);
 	$bbc[] = array(
 		'tag' => 'imgright',
 		'type' => 'unparsed_content',
-		'content' => '<img src="$1" style="float:right; margin:15px;" class="bbc_img resized" />',
+		'content' => '<div style="float: right; margin: 15px;"><img src="$1" alt="{alt}"{width}{height} class="bbc_img resized" /></div>',
 		'validate' => 'BBCode_Float_Validate',
 		'disabled_content' => '($1)',
 	);
@@ -116,7 +116,7 @@ function BBCode_Float_Fix_Param_Order(&$message)
 {
 	global $context;
 
-	BBCode_Float_parameters($dummy, $float_params);
+	BBCode_Float_parameters($dummy, $parameters);
 	foreach (array('imgleft', 'imgright') as $tag)
 	{
 		$pattern = '#\[' . $tag . ' (.+?)\]#i' . ($context['utf8'] ? 'u' : '');
@@ -125,27 +125,24 @@ function BBCode_Float_Fix_Param_Order(&$message)
 		asort($matches);
 		foreach ($matches as $match)
 		{
-			$params = explode('|', str_replace(' ', '|', str_replace(']', ' ]', $match)));
+			$params = explode(' ', str_replace(']', ' ]', $match));
 			unset($params[0]);
 			unset($params[count($params)]);
 			$order = array();
-			$old = '';
-			foreach ($params as $id => $param)
+			$replace_str = $old = '';
+			foreach ($params as $param)
 			{
-				if (strpos($param, '=') === false && !empty($old))
-				{
+				if (strpos($param, '=') === false)
 					$order[$old] .= ' ' . $param;
-					continue;
-				}
-				$key = explode('=', $param);
-				if (!isset($order[$key[0]]))
-					$order[$key[0]] = $key[1];
-				$old = $key[0];
+				else
+					$order[$old = substr($param, 0, strpos($param, '='))] = substr($param, strpos($param, '=') + 1);
 			}
-			$out = '[' . $tag;
-			foreach ($float_params as $key => $ignore)
-				$out .= (isset($order[$key]) ? ' ' . $key . '=' . $order[$key] : '');
-			$message = str_replace($match, $out . ']', $message);
+			foreach ($parameters as $key => $ignore)
+			{
+				$replace_str .= (isset($order[$key]) ? ' ' . $key . '=' . $order[$key] : '');
+				unset($order[$key]);
+			}
+			$message = str_replace($match, '[' . $tag . $replace_str . ']', $message);
 		}
 	}
 }
