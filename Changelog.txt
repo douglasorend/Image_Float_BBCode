@@ -1,3 +1,6 @@
+v1.10 - May 1st, 2015
+o Fixed missing BBCode button in editor for SMF 2.1 Beta 1.
+
 v1.9 - April 4th, 2015
 o Updated for SMF 2.1 Beta 1
 o Fixed image upload location within package-info.xml
