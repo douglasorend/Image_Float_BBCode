@@ -1,5 +1,5 @@
 [hr]
-[center][color=red][size=16pt][b]IMAGE FLOATING TO LEFT OR RIGHT BBCODE v1.4[/b][/size][/color]
+[center][color=red][size=16pt][b]IMAGE FLOATING TO LEFT OR RIGHT BBCODE v1.5[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=3983]Link to Mod[/url]
 [/center]
 [hr]
@@ -24,6 +24,9 @@ This mod was tested on SMF 2.0.9, but should work on SMF 2.0 and up.
 
 [color=blue][b][size=12pt][u]Changelog[/u][/size][/b][/color]
 [quote]
+[b][u]v1.5 - December 29th, 2014[/u][/b]
+o Fixed image install locations within [b]package-info.xml[/b].
+
 [b][u]v1.4 - December 17th, 2014[/u][/b]
 o Rewrote mod to use one validation function for all bbcodes in this mod.
 
