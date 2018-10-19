@@ -64,4 +64,24 @@ function BBCode_Float(&$bbc)
 	);
 }
 
+function BBCode_Float_Button(&$buttons)
+{
+	global $txt;
+
+	$buttons[count($buttons) - 1][] = array(
+		'image' => 'imgleft',
+		'code' => 'imgleft',
+		'description' => $txt['imgleft'],
+		'before' => '[imgleft]',
+		'after' => '[/imgleft]',
+	);
+	$buttons[count($buttons) - 1][] = array(
+		'image' => 'imgright',
+		'code' => 'imgright',
+		'description' => $txt['imgright'],
+		'before' => '[imgright]',
+		'after' => '[/imgright]',
+	);
+}
+
 ?>
