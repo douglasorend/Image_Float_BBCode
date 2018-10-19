@@ -18,7 +18,7 @@ function BBCode_Float(&$bbc)
 			'height' => array('optional' => true, 'value' => ' height="$1"', 'match' => '(\d+)'),
 		),
 		'content' => '<img src="$1" style="float:left; margin:15px;" {width}{height} />',
-		'validate' => create_function('&$tag, &$data, $disabled', '
+		'validate' => isset($disabled['imgleft']) ? null : create_function('&$tag, &$data, $disabled', '
 			$data = strtr($data, array(\'<br />\' => \'\'));
 			if (strpos($data, \'http://\') !== 0 && strpos($data, \'https://\') !== 0)
 				$data = \'http://\' . $data;
@@ -29,7 +29,7 @@ function BBCode_Float(&$bbc)
 		'tag' => 'imgleft',
 		'type' => 'unparsed_content',
 		'content' => '<img src="$1" style="float:left; margin:15px;" />',
-		'validate' => create_function('&$tag, &$data, $disabled', '
+		'validate' => isset($disabled['imgleft']) ? null : create_function('&$tag, &$data, $disabled', '
 			$data = strtr($data, array(\'<br />\' => \'\'));
 			if (strpos($data, \'http://\') !== 0 && strpos($data, \'https://\') !== 0)
 				$data = \'http://\' . $data;
@@ -44,7 +44,7 @@ function BBCode_Float(&$bbc)
 			'height' => array('optional' => true, 'value' => ' height="$1"', 'match' => '(\d+)'),
 		),
 		'content' => '<img src="$1" style="float:right; margin:15px;" {width}{height} />',
-		'validate' => create_function('&$tag, &$data, $disabled', '
+		'validate' => isset($disabled['imgright']) ? null : create_function('&$tag, &$data, $disabled', '
 			$data = strtr($data, array(\'<br />\' => \'\'));
 			if (strpos($data, \'http://\') !== 0 && strpos($data, \'https://\') !== 0)
 				$data = \'http://\' . $data;
@@ -55,7 +55,7 @@ function BBCode_Float(&$bbc)
 		'tag' => 'imgright',
 		'type' => 'unparsed_content',
 		'content' => '<img src="$1" style="float:right; margin:15px;" />',
-		'validate' => create_function('&$tag, &$data, $disabled', '
+		'validate' => isset($disabled['imgright']) ? null : create_function('&$tag, &$data, $disabled', '
 			$data = strtr($data, array(\'<br />\' => \'\'));
 			if (strpos($data, \'http://\') !== 0 && strpos($data, \'https://\') !== 0)
 				$data = \'http://\' . $data;
