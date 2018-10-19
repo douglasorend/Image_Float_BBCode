@@ -14,10 +14,11 @@ function BBCode_Float(&$bbc)
 		'tag' => 'imgleft',
 		'type' => 'unparsed_content',
 		'parameters' => array(
+			'alt' => array('optional' => true),
 			'width' => array('optional' => true, 'value' => ' width="$1"', 'match' => '(\d+)'),
 			'height' => array('optional' => true, 'value' => ' height="$1"', 'match' => '(\d+)'),
 		),
-		'content' => '<img src="$1" style="float:left; margin:15px;" {width}{height} />',
+		'content' => '<img src="$1" style="float:left; margin:15px;" alt="{alt}"{width}{height} />',
 		'validate' => 'BBCode_Float_Validate',
 		'disabled_content' => '($1)',
 	);
@@ -32,10 +33,11 @@ function BBCode_Float(&$bbc)
 		'tag' => 'imgright',
 		'type' => 'unparsed_content',
 		'parameters' => array(
+			'alt' => array('optional' => true),
 			'width' => array('optional' => true, 'value' => ' width="$1"', 'match' => '(\d+)'),
 			'height' => array('optional' => true, 'value' => ' height="$1"', 'match' => '(\d+)'),
 		),
-		'content' => '<img src="$1" style="float:right; margin:15px;" {width}{height} />',
+		'content' => '<img src="$1" style="float:right; margin:15px;" alt="{alt}"{width}{height} />',
 		'validate' => 'BBCode_Float_Validate',
 		'disabled_content' => '($1)',
 	);

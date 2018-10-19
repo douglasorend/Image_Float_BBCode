@@ -13,17 +13,22 @@ The two BBCodes takes these forms:
 [imgright]{url}[/imgright]
 [imgleft width=x height=x]{url}[/imgleft]
 [imgright width=x height=x]{url}[/imgright]
+[imgleft width=x height=x alt="Some Text Here"]{url}[/imgleft]
+[imgright width=x height=x alt="Some Text Here"]{url}[/imgright]
 [/code]
 where [b]{url}[/b] is the image URL and the [b]width[/b] and [b]height[/b] parameters being optional.
 
 [color=blue][b][size=12pt][u]Admin Settings[/u][/size][/b][/color]
-There are no admin settings to this mod.  To disable, you must uninstall this mod.
+This BBCode may be disabled by going into the [b]Admin[/b] => [b]Forum[/b] => [b]Posts and Topics[/b] => [b]Bulletin Board Code[/b] and unchecking the bbcodes you don't want to use.  You may also be uninstall this mod in order to disable it.
 
 [color=blue][b][size=12pt][u]Compatibility Notes[/u][/size][/b][/color]
 This mod was tested on SMF 2.0.9, but should work on SMF 2.0 and up.
 
 [color=blue][b][size=12pt][u]Changelog[/u][/size][/b][/color]
 [quote]
+[b][u]v1.6 - December 30th, 2014[/u][/b]
+o Added [b]alt[/b] parameter to the [b]imgleft[/b] and [b]imgright[/b] bbcodes.
+
 [b][u]v1.5 - December 29th, 2014[/u][/b]
 o Fixed image install locations within [b]package-info.xml[/b].
 
