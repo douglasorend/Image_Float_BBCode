@@ -1,6 +1,6 @@
 -------
 
-# IMAGE FLOATING TO LEFT OR RIGHT BBCODE v1.21
+# IMAGE FLOATING TO LEFT OR RIGHT BBCODE v1.22
 
 [**By Dougiefresh**](http://www.simplemachines.org/community/index.php?action=profile;u=253913) -> [Link to Mod](http://custom.simplemachines.org/mods/index.php?mod=3983)
 

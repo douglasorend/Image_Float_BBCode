@@ -1,3 +1,7 @@
+v1.22 - October 22nd, 2018
+o Added Spanish Latin translation, courtsey of [url=https://www.simplemachines.org/community/index.php?action=profile;u=322597]Rock Lee[/url].
+o Added Portuguese Brazilian translation, courtsey of [url=https://www.simplemachines.org/community/index.php?action=profile;u=598068]ORIONzitos[/url].
+
 v1.21 - October 18th, 2018
 o No functionality change.
 o Updated documentation to point to new website.

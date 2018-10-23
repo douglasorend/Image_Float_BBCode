@@ -1,24 +1,24 @@
+*// PT-BR TRANSLATION By:  pt-br translation by ORIONzitos (https://discord.gg/Z2m5bsA, a discord for BR-COMMUNITY) //*
 <?xml version="1.0"?>
 <!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
 <modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
 <id>Dougiefresh:ImgLeftRight</id>
 <version>1.22</version>
 
-<file name="$languagedir/index.english.php">
+<file name="$languagedir/index.portuguese_brazilian.php" error="skip">
+
 	<operation>
 		<search position="replace"><![CDATA[// Locale (strftime, pspell_new) and spelling. (pspell_new, can be left as '' normally.)]]></search>
-		<add><![CDATA[$txt['imgleft'] = "Float Image to the left";
-$txt['imgright'] = "Float Image to the right";
-
+		<add><![CDATA[$txt['imgleft'] = "Imagen flotante a esquerda";
+$txt['imgright'] = "Imagen flutuante a direita";
 // Locale (strftime, pspell_new) and spelling. (pspell_new, can be left as '' normally.)]]></add>
 	</operation>
 </file>
-<file name="$languagedir/index.english-utf8.php" error="skip">
+<file name="$languagedir/index.portuguese_brazilian-utf8.php" error="skip">
 	<operation>
 		<search position="replace"><![CDATA[// Locale (strftime, pspell_new) and spelling. (pspell_new, can be left as '' normally.)]]></search>
-		<add><![CDATA[$txt['imgleft'] = "Float Image to the left";
-$txt['imgright'] = "Float Image to the right";
-
+		<add><![CDATA[$txt['imgleft'] = "Imagem flutuante a esquerda";
+$txt['imgright'] = "Imagem Flutuante a direita";
 // Locale (strftime, pspell_new) and spelling. (pspell_new, can be left as '' normally.)]]></add>
 	</operation>
 </file>

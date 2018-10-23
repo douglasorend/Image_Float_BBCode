@@ -4,21 +4,19 @@
 <id>Dougiefresh:ImgLeftRight</id>
 <version>1.22</version>
 
-<file name="$languagedir/index.english.php">
+<file name="$languagedir/index.spanish_latin.php" error="skip">
 	<operation>
 		<search position="replace"><![CDATA[// Locale (strftime, pspell_new) and spelling. (pspell_new, can be left as '' normally.)]]></search>
-		<add><![CDATA[$txt['imgleft'] = "Float Image to the left";
-$txt['imgright'] = "Float Image to the right";
-
+		<add><![CDATA[$txt['imgleft'] = "Imagen flotante a la izquierda";
+$txt['imgright'] = "Imagen flotante a la derecha";
 // Locale (strftime, pspell_new) and spelling. (pspell_new, can be left as '' normally.)]]></add>
 	</operation>
 </file>
-<file name="$languagedir/index.english-utf8.php" error="skip">
+<file name="$languagedir/index.spanish_latin-utf8.php" error="skip">
 	<operation>
 		<search position="replace"><![CDATA[// Locale (strftime, pspell_new) and spelling. (pspell_new, can be left as '' normally.)]]></search>
-		<add><![CDATA[$txt['imgleft'] = "Float Image to the left";
-$txt['imgright'] = "Float Image to the right";
-
+		<add><![CDATA[$txt['imgleft'] = "Imagen flotante a la izquierda";
+$txt['imgright'] = "Imagen flotante a la derecha";
 // Locale (strftime, pspell_new) and spelling. (pspell_new, can be left as '' normally.)]]></add>
 	</operation>
 </file>
